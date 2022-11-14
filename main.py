@@ -1,5 +1,5 @@
 import os
-path = '/Users/admin/PycharmProjects/task3/1.txt'
+path = '.'
 
 
 def tekst(path: str):
@@ -12,11 +12,10 @@ def tekst(path: str):
     with open('text.txt', 'w', encoding='utf-8') as file:
         for file_name, rows in sorted(dict_txt.items(), key=lambda x: len(x[1])):
             file.write(file_name + '\n')
-            file.write(str(str(rows)) + '\n')
+            file.write(str(str(len(rows))) + '\n')
             if '\n' not in rows[-1]:
                 rows[-1] += '\n'
-        file.write(' '.join(rows))
-    print(file)
+                file.write(' '.join(rows))
 
 
 tekst(path)
